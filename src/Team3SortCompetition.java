@@ -20,7 +20,7 @@ public class Team3SortCompetition extends SortCompetition {
     }
 
     public int challengeFour(int[][] arr) { //two dimensional array. 1,000 by 1,000 with random integers between 0 and 10,00. return median of median array
-        return twoDimensionSort(arr);
+        return challenge4(arr);
 
     }
 
@@ -95,7 +95,7 @@ public class Team3SortCompetition extends SortCompetition {
         }
     }
 
-    public static int search(Object[] arr, Object query) { //searches an array for a query
+    public static int search(Comparable[] arr, Comparable query) { //searches an array for a query
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].equals(query)) {
                 return i;
@@ -104,7 +104,7 @@ public class Team3SortCompetition extends SortCompetition {
         return -1;
     }
 
-    public static int twoDimensionSort(int[][] arr) { //sorts the inside of the sub arrays and then sorts them in order by their medians
+    public static int challenge4(int[][] arr) { //sorts the inside of the sub arrays and then sorts them in order by their medians
 
         for (int i = 0; i < arr.length; i++) {
             intBubbleSort(arr[i]); //sorts sub arrys OwO
@@ -128,6 +128,8 @@ public class Team3SortCompetition extends SortCompetition {
         for (int i = 0; i < arr.length; i++) {
             medianArr[i] = median(arr[i]); //makes new array out of all the medianssssss <3 :D
         }
+
+        intBubbleSort(medianArr);
 
         return median(medianArr); //returns median of median array
     }
