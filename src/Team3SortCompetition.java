@@ -46,6 +46,16 @@ public class Team3SortCompetition extends SortCompetition {
         arr[j] = temp;
     }
 
+    public static void arrSwap(int[][] arr, int i) {
+        for (int j = 0; j < arr[i].length,j++){
+            int temp = 0;
+            temp = arr[i][j];
+            arr[i][j] = arr[i+1][j];
+            arr[i+1][j] =temp;
+            }
+    }
+
+
     public static void stringBubbleSort(String[] arr) {
         int swaps = 1;
         while (swaps > 0) {
@@ -116,13 +126,10 @@ public class Team3SortCompetition extends SortCompetition {
             for (int i = 0; i < arr.length - 1; i++) {
                 int x = median(arr[i]), y = median(arr[i + 1]);
                 if (x > y) {
-                    int[] temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
-                    swaps++;
-                } //bubble sort but for the sub arrays
+                    arrSwap(arr, i);
+                    }
+                    } //bubble sort but for the sub arrays
             }
-        }
 
         int[] medianArr = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
@@ -132,6 +139,7 @@ public class Team3SortCompetition extends SortCompetition {
         intBubbleSort(medianArr);
 
         return median(medianArr); //returns median of median array
+
     }
 
 
