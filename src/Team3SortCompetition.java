@@ -47,7 +47,7 @@ public class Team3SortCompetition extends SortCompetition {
     }
 
     public static void arrSwap(int[][] arr, int i) {
-        for (int j = 0; j < arr[i].length,j++){
+        for (int j = 0; j < arr[i].length;j++){
             int temp = 0;
             temp = arr[i][j];
             arr[i][j] = arr[i+1][j];
